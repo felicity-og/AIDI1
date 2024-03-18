@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, url_for
 from joblib import load
 
 app = Flask(__name__)
-#pickle_in = open('finalized_model.sav', 'rb')
-#model = pickle.load(pickle_in) 
 classifier= load('fish_classifier.joblib')
 
 @app.route('/')
