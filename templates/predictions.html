@@ -8,16 +8,9 @@
 {% block body %}
 <h1>What species of fish?</h1>
 <table border=3>
-    {% for key, value in result.items() %}
-
-    <tr>
-        <th> {{ key }}</th>
-        <td> {{ value }}</td>
-    </tr>
-    {% endfor %}
     <tr>
         <th> Fish species:</th>
-        <td> {{ output }}</td>
+        <td> {{ predict }}</td>
     </tr>
 </table>
 {% endblock %}

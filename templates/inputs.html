@@ -7,7 +7,7 @@
 
 {% block body %}
 <h3>Enter fish measurements:</h3>
-<form action={{ url_for('predictions')}} method="post">
+<form action={{ url_for('predictions') }} method="post">
     <p>Diagonal length <input type="number" name="length1" required="required"/></p>
     <p>Vertical length <input type="number" name="length2" required="required"/></p>
     <p>Cross length <input type="number" name="length3" required="required"/></p>
