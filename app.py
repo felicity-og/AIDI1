@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, url_for
-from joblib import load
+import joblib
 
 app = Flask(__name__)
-classifier= load('fish_classifier.joblib')
+classifier= joblib.load('fish_classifier.joblib')
 
 @app.route('/')
 def inputs():
