@@ -9,7 +9,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 def inputs():
     return render_template('inputs.html')
 
-@app.route('/predictions', methods=['POST'])
+@app.route('/predictions', methods=['POST','GET'])
 def predictions():
     if request.method =='POST':
         result= request.form
