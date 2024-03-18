@@ -7,13 +7,13 @@
 
 {% block body %}
 <h3>Enter fish measurements:</h3>
-<form action="http://localhost:5000/predictions" method="POST">
-    <p>Diagonal length <input type="number" name="length1"/></p>
-    <p>Vertical length <input type="number" name="length2"/></p>
-    <p>Cross length <input type="number" name="length3"/></p>
-    <p>Width <input type="number" name="width"/></p>
-    <p>Height <input type="number" name="height"/></p>
-    <p>Weight <input type="number" name="weight"/></p>
-    <p><input type="submit" value="submit"/></p>
+<form action={{ url_for('predictions') }} method="post">
+    <p>Diagonal length <input type="number" name="length1" required="required"/></p>
+    <p>Vertical length <input type="number" name="length2" required="required"/></p>
+    <p>Cross length <input type="number" name="length3" required="required"/></p>
+    <p>Width <input type="number" name="width" required="required"/></p>
+    <p>Height <input type="number" name="height" required="required"/></p>
+    <p>Weight <input type="number" name="weight" required="required"/></p>
+    <button type="submit" >Predict</button>
 </form>
 {% endblock %}
