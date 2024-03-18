@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, url_for
-import pickle
+from joblib import load
 
 app = Flask(__name__)
-pickle_in = open('finalized_model.sav', 'rb')
-model = pickle.load(pickle_in) 
+#pickle_in = open('finalized_model.sav', 'rb')
+#model = pickle.load(pickle_in) 
+classifier= load('fish_classifier.joblib')
 
 @app.route('/')
 def inputs():
@@ -14,7 +15,7 @@ def predictions():
     if request.method =='POST':
         result= request.form
         result= list(result.values())
-        output = model.predict(result)[0]
+        output = classifier.predict(result)[0]
         return render_template("predictions.html")
 
 if __name__ == "__main__":
