@@ -11,8 +11,8 @@ def inputs():
 @app.route('/predictions', methods=['POST', 'GET'])
 def predictions():
     if request.method =='POST':
-        result= request.form.to_dict()
-        result= list(result.values())
+        result= request.form
+        #result= list(result.values())
         output = model.predict(result)
         return render_template("predictions.html",output)
 
