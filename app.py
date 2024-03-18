@@ -1,8 +1,9 @@
 from flask import *
 import pickle
 
+
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb')) 
+model = pickle.load(open('models/model.pkl', 'rb')) 
 
 @app.route('/')
 def inputs():
@@ -13,8 +14,8 @@ def predictions():
     if request.method =='POST':
         result= request.form
         #result= list(result.values())
-        output = model.predict(result)
-        return render_template("predictions.html",output)
+        output = model.predict(result)[0]
+        return render_template("predictions.html",result=output)
 
 if __name__ == "__main__":
     app.run(debug=True)
