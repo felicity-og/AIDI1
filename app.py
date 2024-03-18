@@ -14,7 +14,7 @@ def predictions():
         result= request.form.to_dict()
         result= list(result.values())
         output = model.predict(result)
-        return render_template("predictions.html")
+        return render_template("predictions.html",output)
 
 if __name__ == "__main__":
     app.run(debug=True)
