@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, url_for
-import numpy as np
 import pickle
 
 
@@ -16,7 +15,6 @@ def predictions():
     if request.method =='POST':
         result= request.form
         result= list(result.values())
-        result= np.array(result)
         output = model.predict(result)[0]
         return render_template("predictions.html")
 
